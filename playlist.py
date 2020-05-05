@@ -1,5 +1,6 @@
 import os
 
+#Make a list of .smpl files in working directory
 path = "./"
 file_list = os.listdir(path)
 file_list_smpl = [file for file in file_list if file.endswith(".smpl")]
@@ -13,8 +14,15 @@ for filename in file_list_smpl:
     for dat in splitdata:
         temp = dat.split('"')
         name = temp[0]
+
+        #Change music file path info
         name = name.replace("/storage/emulated/0/","D:/")
+
+        #Handling special symbol, .smpl uses unicode, but .zpl uses html entitiy code
+        # convert special symbol describing style
+        # &
         name = name.replace("\\u0026","&amp;")
+        # '
         name = name.replace("\\u0027","&apos;")
         finaldata.append(name)
     

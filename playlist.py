@@ -18,8 +18,8 @@ for filename in file_list_smpl:
         #Change music file path info
         name = name.replace("/storage/emulated/0/","D:/")
 
-        #Handling special symbol, .smpl uses unicode, but .zpl uses html entitiy code
-        # convert special symbol describing style
+        #Handling special characters, .smpl uses unicode, but .zpl uses html entitiy code
+        # Converting unicode to entitiy code
         # &
         name = name.replace("\\u0026","&amp;")
         # '
